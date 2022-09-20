@@ -1,0 +1,698 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-100.0, 5.0), 
+    point2=(95.0, 20.0))
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-100.0, -5.0), 
+    point2=(95.0, -18.75))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    43.83740234375, 35.5577774047852), value=200.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    45.7105407714844, -34.9807052612305), value=200.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[6])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    109.085250854492, 13.7095737457275), value=12.7, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    116.265625, -15.9415531158447), value=12.7, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[7], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[6])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    118.138778686523, 0.912775039672852), value=0.5, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[7])
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Adherend', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Adherend'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['Adherend'].PartitionEdgeByParam(edges=
+    mdb.models['Model-1'].parts['Adherend'].edges.getSequenceFromMask((
+    '[#40 ]', ), ), parameter=0.5)
+mdb.models['Model-1'].parts['Adherend'].PartitionEdgeByParam(edges=
+    mdb.models['Model-1'].parts['Adherend'].edges.getSequenceFromMask(('[#4 ]', 
+    ), ), parameter=0.2)
+mdb.models['Model-1'].parts['Adherend'].features['Partition edge-2'].setValues(
+    parameter=0.1)
+mdb.models['Model-1'].parts['Adherend'].regenerate()
+mdb.models['Model-1'].parts['Adherend'].regenerate()
+mdb.models['Model-1'].parts['Adherend'].PartitionEdgeByParam(edges=
+    mdb.models['Model-1'].parts['Adherend'].edges.getSequenceFromMask(('[#8 ]', 
+    ), ), parameter=0.888)
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=10.02, name='__profile__', 
+    sheetSize=400.8, transform=
+    mdb.models['Model-1'].parts['Adherend'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['Adherend'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(0.0, -5.975, 0.0)))
+mdb.models['Model-1'].parts['Adherend'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-50.0, 19.55), 
+    point2=(-50.0, 6.85))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[13])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[11], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[13])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[11], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[11])
+mdb.models['Model-1'].sketches['__profile__'].EqualDistanceConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[9], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10], midpoint=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[11])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[12], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-50.1, 6.35), 
+    point2=(-50.1, -6.35))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[14])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[14])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[13], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[14], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    -74.3796234130859, -12.8508285522461), value=50.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[14], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].parts['Adherend'].PartitionFaceBySketch(faces=
+    mdb.models['Model-1'].parts['Adherend'].faces.getSequenceFromMask(('[#3 ]', 
+    ), ), sketch=mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-40.0, 0.0), 
+    point2=(95.0, 2.5))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    82.0821228027344, 13.9299764633179), value=150.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -52.2200164794922, -0.691132545471191), value=0.5, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='adhesive', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['adhesive'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='Adherend')
+mdb.models['Model-1'].materials['Adherend'].Elastic(table=((70000.0, 0.3), ))
+mdb.models['Model-1'].Material(name='Cohesive')
+mdb.models['Model-1'].materials['Cohesive'].Elastic(table=((1800.0, 500.0, 
+    500.0), ), type=TRACTION)
+mdb.models['Model-1'].materials['Cohesive'].MaxsDamageInitiation(table=((20.0, 
+    16.0, 16.0), ))
+mdb.models['Model-1'].materials['Cohesive'].maxsDamageInitiation.DamageEvolution(
+    mixedModeBehavior=BK, power=2.0, table=((0.4, 4.0, 4.0), ), type=ENERGY)
+mdb.models['Model-1'].materials['Cohesive'].maxsDamageInitiation.DamageStabilizationCohesive(
+    cohesiveCoeff=0.0001)
+mdb.models['Model-1'].HomogeneousSolidSection(material='Adherend', name=
+    'Aluminium', thickness=25.0)
+mdb.models['Model-1'].CohesiveSection(initialThicknessType=GEOMETRY, material=
+    'Cohesive', name='Cohesive', outOfPlaneThickness=25.0, response=
+    TRACTION_SEPARATION)
+mdb.models['Model-1'].parts['adhesive'].Set(faces=
+    mdb.models['Model-1'].parts['adhesive'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['adhesive'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['adhesive'].sets['Set-1'], sectionName=
+    'Cohesive', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Adherend'].Set(faces=
+    mdb.models['Model-1'].parts['Adherend'].faces.getSequenceFromMask(('[#f ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['Adherend'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Adherend'].sets['Set-1'], sectionName=
+    'Aluminium', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 15.0), point1=(0.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-15.0, 15.0), 
+    point2=(15.0, 15.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 15.0), point2=(
+    -20.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 15.0), point2=(
+    20.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].setAsConstruction(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], ))
+mdb.models['Model-1'].sketches['__profile__'].AngularDimension(line1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], line2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], textPoint=(
+    -6.89683675765991, 14.1378612518311), value=30.0)
+mdb.models['Model-1'].sketches['__profile__'].AngularDimension(line1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], line2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], textPoint=(
+    7.70085763931274, 13.2193412780762), value=30.0)
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], point1=(
+    -16.492525100708, 5.46295356750488))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], point1=(
+    -14.450888633728, 11.5864181518555))
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], radius=20.0, 
+    textPoint=(25.7693347930908, 21.4860172271729))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], ))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-5.0, 15.0), point2=
+    (-30.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].AngularDimension(line1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], line2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7], textPoint=(
+    -14.9612970352173, 12.6069946289063), value=30.0)
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7], point1=(
+    -25.0397491455078, 3.31271553039551))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], point1=(
+    -24.5776329040527, 8.85682106018066))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9], point1=(
+    -23.3068084716797, 23.6411037445068))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[11], point1=(
+    15.0489473342896, 10.9358615875244))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], point1=(
+    14.9334192276001, 3.42821884155273))
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Load-Cell', type=
+    ANALYTIC_RIGID_SURFACE)
+mdb.models['Model-1'].parts['Load-Cell'].AnalyticRigidSurf2DPlanar(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.0, -10.0))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], radius=10.0, 
+    textPoint=(25.839412689209, -2.22222137451172))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-10.0, 0.0), point2=
+    (10.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    10.0, 10.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    -10.0, 10.0))
+mdb.models['Model-1'].sketches['__profile__'].AngularDimension(line1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], line2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], textPoint=(
+    5.72877550125122, 0.960603475570679), value=30.0)
+mdb.models['Model-1'].sketches['__profile__'].AngularDimension(line1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], line2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], textPoint=(
+    -5.63274717330933, 1.72351241111755), value=30.0)
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], point1=(
+    -10.5504207611084, 6.04665756225586))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], point1=(
+    10.6464500427246, 6.3857250213623))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], point1=(
+    8.44197463989258, -5.99033260345459))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8], point1=(
+    -7.32849645614624, -7.00754261016846))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9], point1=(
+    -9.9569091796875, 2.40165305137634))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[10], point1=(
+    9.20506286621094, 3.16456007957459))
+mdb.models['Model-1'].sketches['__profile__'].setAsConstruction(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], ))
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Support', type=
+    ANALYTIC_RIGID_SURFACE)
+mdb.models['Model-1'].parts['Support'].AnalyticRigidSurf2DPlanar(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Adherend-1', 
+    part=mdb.models['Model-1'].parts['Adherend'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='adhesive-1', 
+    part=mdb.models['Model-1'].parts['adhesive'])
+mdb.models['Model-1'].rootAssembly.instances['adhesive-1'].translate(vector=(
+    155.0, 0.0, 0.0))
+mdb.models['Model-1'].StaticStep(initialInc=1e-05, maxNumInc=2000, minInc=1e-15
+    , name='Step-1', nlgeom=ON, previous='Initial')
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 'CDISP', 
+    'SDEG', 'PHILSM', 'PSILSM', 'STATUS'))
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-1', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#100 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['adhesive-1'].edges.getSequenceFromMask(
+    ('[#1 ]', ), ), name='s_Set-1')
+mdb.models['Model-1'].Tie(adjust=ON, master=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-1'], name=
+    'Constraint-1', positionToleranceMethod=COMPUTED, slave=
+    mdb.models['Model-1'].rootAssembly.sets['s_Set-1'], thickness=ON, 
+    tieRotations=ON)
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-2', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#2000 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['adhesive-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ), name='s_Set-2')
+mdb.models['Model-1'].Tie(adjust=ON, master=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-2'], name=
+    'Constraint-2', positionToleranceMethod=COMPUTED, slave=
+    mdb.models['Model-1'].rootAssembly.sets['s_Set-2'], thickness=ON, 
+    tieRotations=ON)
+mdb.models['Model-1'].rootAssembly.CoincidentPoint(fixedPoint=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].vertices[12], 
+    movablePoint=
+    mdb.models['Model-1'].rootAssembly.instances['adhesive-1'].vertices[2])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Load-Cell-1', 
+    part=mdb.models['Model-1'].parts['Load-Cell'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Support-1', 
+    part=mdb.models['Model-1'].parts['Support'])
+mdb.models['Model-1'].rootAssembly.instances['Load-Cell-1'].translate(vector=(
+    125.784609690827, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['Support-1'].translate(vector=(
+    148.497422611929, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Support-2', 
+    part=mdb.models['Model-1'].parts['Support'])
+mdb.models['Model-1'].rootAssembly.instances['Support-2'].translate(vector=(
+    167.549981495187, 0.0, 0.0))
+mdb.models['Model-1'].ContactProperty('Surf-Surf')
+mdb.models['Model-1'].interactionProperties['Surf-Surf'].TangentialBehavior(
+    formulation=FRICTIONLESS)
+mdb.models['Model-1'].interactionProperties['Surf-Surf'].NormalBehavior(
+    allowSeparation=ON, constraintEnforcementMethod=DEFAULT, 
+    pressureOverclosure=HARD)
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-3', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Load-Cell-1'].edges.getSequenceFromMask(
+    ('[#6 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='s_Surf-3', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#18000 ]', ), ))
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Step-1', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='Surf-Surf', master=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-3'], name='Int-1', 
+    slave=mdb.models['Model-1'].rootAssembly.surfaces['s_Surf-3'], sliding=
+    FINITE, thickness=ON)
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-5', side2Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Support-1'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='s_Surf-5', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#60 ]', ), ))
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Step-1', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='Surf-Surf', master=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-5'], name='Int-2', 
+    slave=mdb.models['Model-1'].rootAssembly.surfaces['s_Surf-5'], sliding=
+    FINITE, thickness=ON)
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-7', side2Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Support-2'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='s_Surf-7', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#18 ]', ), ))
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Step-1', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='Surf-Surf', master=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-7'], name='Int-3', 
+    slave=mdb.models['Model-1'].rootAssembly.surfaces['s_Surf-7'], sliding=
+    FINITE, thickness=ON)
+mdb.models['Model-1'].rootAssembly.CoincidentPoint(fixedPoint=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].vertices[14], 
+    movablePoint=
+    mdb.models['Model-1'].rootAssembly.instances['Load-Cell-1'].vertices[2])
+mdb.models['Model-1'].rootAssembly.CoincidentPoint(fixedPoint=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].vertices[5], 
+    movablePoint=
+    mdb.models['Model-1'].rootAssembly.instances['Support-1'].InterestingPoint(
+    mdb.models['Model-1'].rootAssembly.instances['Support-1'].edges[1], 
+    MIDDLE))
+mdb.models['Model-1'].rootAssembly.CoincidentPoint(fixedPoint=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].vertices[4], 
+    movablePoint=
+    mdb.models['Model-1'].rootAssembly.instances['Support-2'].InterestingPoint(
+    mdb.models['Model-1'].rootAssembly.instances['Support-2'].edges[1], 
+    MIDDLE))
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.instances['Load-Cell-1'].vertices[0])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.instances['Support-2'].vertices[0])
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.instances['Support-1'].vertices[0])
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-9', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Load-Cell-1'].edges.getSequenceFromMask(
+    ('[#6 ]', ), ))
+mdb.models['Model-1'].RigidBody(name='Constraint-3', refPointRegion=Region(
+    referencePoints=(mdb.models['Model-1'].rootAssembly.referencePoints[26], ))
+    , surfaceRegion=mdb.models['Model-1'].rootAssembly.surfaces['Surf-9'])
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-10', side2Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Support-1'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].RigidBody(name='Constraint-4', refPointRegion=Region(
+    referencePoints=(mdb.models['Model-1'].rootAssembly.referencePoints[28], ))
+    , surfaceRegion=mdb.models['Model-1'].rootAssembly.surfaces['Surf-10'])
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-11', side2Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Support-2'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].RigidBody(name='Constraint-5', refPointRegion=Region(
+    referencePoints=(mdb.models['Model-1'].rootAssembly.referencePoints[27], ))
+    , surfaceRegion=mdb.models['Model-1'].rootAssembly.surfaces['Surf-11'])
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-12', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='s_Surf-12', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#1000 ]', ), ))
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Step-1', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='Surf-Surf', master=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-12'], name='Int-4', 
+    slave=mdb.models['Model-1'].rootAssembly.surfaces['s_Surf-12'], sliding=
+    FINITE, thickness=ON)
+mdb.models['Model-1'].rootAssembly.Set(name='Set-6', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[27], 
+    mdb.models['Model-1'].rootAssembly.referencePoints[28]))
+mdb.models['Model-1'].EncastreBC(createStepName='Step-1', localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-6'])
+mdb.models['Model-1'].rootAssembly.Set(name='Set-7', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[26], ))
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-2', region=mdb.models['Model-1'].rootAssembly.sets['Set-7'], u1=0.0, 
+    u2=-1.5, ur3=0.0)
+mdb.models['Model-1'].rootAssembly.Set(name='Set-8', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].vertices.getSequenceFromMask(
+    ('[#4000 ]', ), ))
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-3', region=mdb.models['Model-1'].rootAssembly.sets['Set-8'], u1=0.0, 
+    u2=UNSET, ur3=UNSET)
+mdb.models['Model-1'].parts['Adherend'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Adherend'].edges.getSequenceFromMask((
+    '[#1ffff ]', ), ), size=0.5)
+mdb.models['Model-1'].parts['Adherend'].generateMesh()
+mdb.models['Model-1'].parts['adhesive'].setMeshControls(elemShape=QUAD, 
+    regions=mdb.models['Model-1'].parts['adhesive'].faces.getSequenceFromMask((
+    '[#1 ]', ), ), technique=SWEEP)
+mdb.models['Model-1'].parts['adhesive'].setElementType(elemTypes=(ElemType(
+    elemCode=COH2D4, elemLibrary=STANDARD, elemDeletion=ON), ElemType(
+    elemCode=UNKNOWN_TRI, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['adhesive'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ), ))
+mdb.models['Model-1'].parts['adhesive'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['adhesive'].edges.getSequenceFromMask(('[#5 ]', 
+    ), ), size=0.5)
+mdb.models['Model-1'].parts['adhesive'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Mode-2-CZM', nodalOutputPrecision=SINGLE
+    , numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['Mode-2-CZM'].submit(consistencyChecking=OFF)
+mdb.jobs['Mode-2-CZM']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'NGB004000016', 'handle': 0, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'PATH BASED TRACKING IS DEFINED IN CONTACT PAIR (ASSEMBLY_S_SURF-3,ASSEMBLY_LOAD-CELL-1_SURF-9). PATH BASED TRACKING CANNOT BE USED WITH ANALYTICAL RIGID MASTER SURFACES, THE STATE BASED TRACKING ALGORITHM WILL BE USED INSTEAD.', 
+    'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'PATH BASED TRACKING IS DEFINED IN CONTACT PAIR (ASSEMBLY_S_SURF-5,ASSEMBLY_SUPPORT-1_SURF-10). PATH BASED TRACKING CANNOT BE USED WITH ANALYTICAL RIGID MASTER SURFACES, THE STATE BASED TRACKING ALGORITHM WILL BE USED INSTEAD.', 
+    'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'PATH BASED TRACKING IS DEFINED IN CONTACT PAIR (ASSEMBLY_S_SURF-7,ASSEMBLY_SUPPORT-2_SURF-11). PATH BASED TRACKING CANNOT BE USED WITH ANALYTICAL RIGID MASTER SURFACES, THE STATE BASED TRACKING ALGORITHM WILL BE USED INSTEAD.', 
+    'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-1_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-1_CNS_-ASSEMBLY_M_SURF-1), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-2_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-2_CNS_-ASSEMBLY_M_SURF-2), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PHILSM IS ONLY VALID WITH XFEM', 
+    'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PSILSM IS ONLY VALID WITH XFEM', 
+    'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST SDEG IS NOT AVAILABLE FOR THE MATERIAL FOR ELEMENT TYPE CPS4R', 
+    'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Temp\\Mode-2-CZM.odb', 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'NGB004000016', 'handle': 10516, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.0, 'attempts': 0, 
+    'timeIncrement': 1e-05, 'increment': 0, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Mode-2-CZM', 'severe': 0, 'iterations': 0, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Mode-2-CZM']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Mode-2-CZM', 'memory': 83.0})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 1e-05, 'attempts': 1, 
+    'timeIncrement': 1e-05, 'increment': 1, 'stepTime': 1e-05, 'step': 1, 
+    'jobName': 'Mode-2-CZM', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 2, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 2e-05, 'attempts': 1, 
+    'timeIncrement': 1e-05, 'increment': 2, 'stepTime': 2e-05, 'step': 1, 
+    'jobName': 'Mode-2-CZM', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 3, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 3.5e-05, 'attempts': 1, 
+    'timeIncrement': 1.5e-05, 'increment': 3, 'stepTime': 3.5e-05, 'step': 1, 
+    'jobName': 'Mode-2-CZM', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 4, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 5.75e-05, 'attempts': 1, 
+    'timeIncrement': 2.25e-05, 'increment': 4, 'stepTime': 5.75e-05, 'step': 1, 
+    'jobName': 'Mode-2-CZM', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 5, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 9.125e-05, 'attempts': 1, 
+    'timeIncrement': 3.375e-05, 'increment': 5, 'stepTime': 9.125e-05, 
+    'step': 1, 'jobName': 'Mode-2-CZM', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 6, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.000141875, 
+    'attempts': 1, 'timeIncrement': 5.0625e-05, 'increment': 6, 
+    'stepTime': 0.000141875, 'step': 1, 'jobName': 'Mode-2-CZM', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 7, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.0002178125, 
+    'attempts': 1, 'timeIncrement': 7.59375e-05, 'increment': 7, 
+    'stepTime': 0.0002178125, 'step': 1, 'jobName': 'Mode-2-CZM', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 8, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.00033171875, 
+    'attempts': 1, 'timeIncrement': 0.00011390625, 'increment': 8, 
+    'stepTime': 0.00033171875, 'step': 1, 'jobName': 'Mode-2-CZM', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 9, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.000502578125, 
+    'attempts': 1, 'timeIncrement': 0.000170859375, 'increment': 9, 
+    'stepTime': 0.000502578125, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 10, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.0007588671875, 
+    'attempts': 1, 'timeIncrement': 0.0002562890625, 'increment': 10, 
+    'stepTime': 0.0007588671875, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 1, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 11, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.00114330078125, 
+    'attempts': 1, 'timeIncrement': 0.00038443359375, 'increment': 11, 
+    'stepTime': 0.00114330078125, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 1, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 12, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.001719951171875, 
+    'attempts': 1, 'timeIncrement': 0.000576650390625, 'increment': 12, 
+    'stepTime': 0.001719951171875, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 13, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.0025849267578125, 
+    'attempts': 1, 'timeIncrement': 0.0008649755859375, 'increment': 13, 
+    'stepTime': 0.0025849267578125, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 14, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.00388239013671875, 
+    'attempts': 1, 'timeIncrement': 0.00129746337890625, 'increment': 14, 
+    'stepTime': 0.00388239013671875, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 15, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.00582858520507813, 
+    'attempts': 1, 'timeIncrement': 0.00194619506835938, 'increment': 15, 
+    'stepTime': 0.00582858520507813, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 16, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.00874787780761719, 
+    'attempts': 1, 'timeIncrement': 0.00291929260253906, 'increment': 16, 
+    'stepTime': 0.00874787780761719, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 17, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.0131268167114258, 
+    'attempts': 1, 'timeIncrement': 0.0043789389038086, 'increment': 17, 
+    'stepTime': 0.0131268167114258, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 18, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.0196952250671387, 
+    'attempts': 1, 'timeIncrement': 0.00656840835571289, 'increment': 18, 
+    'stepTime': 0.0196952250671387, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 19, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.029547837600708, 
+    'attempts': 1, 'timeIncrement': 0.00985261253356934, 'increment': 19, 
+    'stepTime': 0.029547837600708, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 20, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.044326756401062, 
+    'attempts': 1, 'timeIncrement': 0.014778918800354, 'increment': 20, 
+    'stepTime': 0.044326756401062, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 21, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.066495134601593, 
+    'attempts': 1, 'timeIncrement': 0.022168378200531, 'increment': 21, 
+    'stepTime': 0.066495134601593, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 2, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 22, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.0997477019023895, 
+    'attempts': 1, 'timeIncrement': 0.0332525673007965, 'increment': 22, 
+    'stepTime': 0.0997477019023895, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 1, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 23, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.149626552853584, 
+    'attempts': 1, 'timeIncrement': 0.0498788509511948, 'increment': 23, 
+    'stepTime': 0.149626552853584, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 24, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.224444829280377, 
+    'attempts': 1, 'timeIncrement': 0.0748182764267922, 'increment': 24, 
+    'stepTime': 0.224444829280377, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 1, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 25, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.336672243920565, 
+    'attempts': 1, 'timeIncrement': 0.112227414640188, 'increment': 25, 
+    'stepTime': 0.336672243920565, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 3, 'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 26, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.505013365880847, 
+    'attempts': 1, 'timeIncrement': 0.168341121960282, 'increment': 26, 
+    'stepTime': 0.505013365880847, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 2, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 27, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 0.757525048821271, 
+    'attempts': 1, 'timeIncrement': 0.252511682940424, 'increment': 27, 
+    'stepTime': 0.757525048821271, 'step': 1, 'jobName': 'Mode-2-CZM', 
+    'severe': 1, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Mode-2-CZM']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 28, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 0.242474951178729, 'increment': 28, 'stepTime': 1.0, 
+    'step': 1, 'jobName': 'Mode-2-CZM', 'severe': 1, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Mode-2-CZM']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Mode-2-CZM'})
+mdb.jobs['Mode-2-CZM']._Message(JOB_COMPLETED, {
+    'time': 'Mon Mar 12 15:08:41 2018', 'jobName': 'Mode-2-CZM'})
+# Save by yousefik on 2018_03_12-15.19.41; build 6.14-1 2014_06_04-23.11.02 134264

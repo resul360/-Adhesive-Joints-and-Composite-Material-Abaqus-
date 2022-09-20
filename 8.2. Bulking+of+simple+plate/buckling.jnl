@@ -1,0 +1,177 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-90.0, 45.0), 
+    point2=(85.0, -40.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    39.2048263549805, 64.324836730957), value=150.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    79.3188095092773, -4.54130554199219), value=80.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Composite', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Composite'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='Composite')
+mdb.models['Model-1'].materials['Composite'].Elastic(table=((100000.0, 10000.0, 
+    10000.0, 0.29, 0.29, 0.39, 5200.0, 5200.0, 1450.0), ), type=
+    ENGINEERING_CONSTANTS)
+mdb.models['Model-1'].parts['Composite'].CompositeLayup(description='', 
+    elementType=SHELL, name='CompositeLayup-1', offsetType=MIDDLE_SURFACE, 
+    symmetric=False, thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Composite'].compositeLayups['CompositeLayup-1'].Section(
+    integrationRule=SIMPSON, poissonDefinition=DEFAULT, preIntegrate=OFF, 
+    temperature=GRADIENT, thicknessType=UNIFORM, useDensity=OFF)
+mdb.models['Model-1'].parts['Composite'].compositeLayups['CompositeLayup-1'].ReferenceOrientation(
+    additionalRotationType=ROTATION_NONE, angle=0.0, axis=AXIS_3, fieldName='', 
+    localCsys=None, orientationType=GLOBAL)
+mdb.models['Model-1'].parts['Composite'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='Composite', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=45.0, plyName='Ply-1', region=Region(
+    faces=mdb.models['Model-1'].parts['Composite'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), suppressed=False, thickness=0.29, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['Composite'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='Composite', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=-45.0, plyName='Ply-2', region=Region(
+    faces=mdb.models['Model-1'].parts['Composite'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), suppressed=False, thickness=0.29, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['Composite'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='Composite', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=45.0, plyName='Ply-3', region=Region(
+    faces=mdb.models['Model-1'].parts['Composite'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), suppressed=False, thickness=0.29, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['Composite'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='Composite', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=-45.0, plyName='Ply-4', region=Region(
+    faces=mdb.models['Model-1'].parts['Composite'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), suppressed=False, thickness=0.29, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['Composite'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='Composite', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=-45.0, plyName='Ply-5', region=Region(
+    faces=mdb.models['Model-1'].parts['Composite'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), suppressed=False, thickness=0.29, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['Composite'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='Composite', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=45.0, plyName='Ply-6', region=Region(
+    faces=mdb.models['Model-1'].parts['Composite'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), suppressed=False, thickness=0.29, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['Composite'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='Composite', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=-45.0, plyName='Ply-7', region=Region(
+    faces=mdb.models['Model-1'].parts['Composite'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), suppressed=False, thickness=0.29, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['Composite'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='Composite', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=45.0, plyName='Ply-8', region=Region(
+    faces=mdb.models['Model-1'].parts['Composite'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), suppressed=False, thickness=0.29, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Composite-1', 
+    part=mdb.models['Model-1'].parts['Composite'])
+mdb.models['Model-1'].BuckleStep(maxIterations=200, name='Step-1', numEigen=1, 
+    previous='Initial', vectors=10)
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Composite-1'].edges.getSequenceFromMask(
+    ('[#f ]', ), ), name='Set-1')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='BC-1', 
+    region=mdb.models['Model-1'].rootAssembly.sets['Set-1'], u1=UNSET, u2=UNSET
+    , u3=SET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Composite-1'].edges.getSequenceFromMask(
+    ('[#a ]', ), ), name='Set-2')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='BC-2', 
+    region=mdb.models['Model-1'].rootAssembly.sets['Set-2'], u1=UNSET, u2=SET, 
+    u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Composite-1'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ), name='Set-3')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='BC-3', 
+    region=mdb.models['Model-1'].rootAssembly.sets['Set-3'], u1=SET, u2=UNSET, 
+    u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-1', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Composite-1'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].ShellEdgeLoad(createStepName='Step-1', distributionType=
+    UNIFORM, field='', localCsys=None, magnitude=1.0, name='Load-1', region=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-1'])
+mdb.models['Model-1'].parts['Composite'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Composite'].edges.getSequenceFromMask((
+    '[#f ]', ), ), size=2.0)
+mdb.models['Model-1'].parts['Composite'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Composite-3', nodalOutputPrecision=
+    SINGLE, numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', 
+    type=ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['Composite-3'].submit(consistencyChecking=OFF)
+mdb.jobs['Composite-3']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'NGB004000016', 'handle': 0, 'jobName': 'Composite-3'})
+mdb.jobs['Composite-3']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Temp\\Composite-3.odb', 'jobName': 'Composite-3'})
+mdb.jobs['Composite-3']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Composite-3'})
+mdb.jobs['Composite-3']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'NGB004000016', 'handle': 10600, 'jobName': 'Composite-3'})
+mdb.jobs['Composite-3']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Composite-3'})
+mdb.jobs['Composite-3']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'Composite-3'})
+mdb.jobs['Composite-3']._Message(STATUS, {'totalTime': 0.0, 'attempts': 1, 
+    'timeIncrement': 1e-36, 'increment': 0, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Composite-3', 'severe': 0, 'iterations': 0, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Composite-3']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Composite-3', 'memory': 71.0})
+mdb.jobs['Composite-3']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Composite-3', 'memory': 70.0})
+mdb.jobs['Composite-3']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'Composite-3'})
+mdb.jobs['Composite-3']._Message(STATUS, {'totalTime': 0.0, 'attempts': 1, 
+    'timeIncrement': 1e-36, 'increment': 1, 'stepTime': 1e-36, 'step': 1, 
+    'jobName': 'Composite-3', 'severe': 0, 'iterations': 0, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Composite-3']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Composite-3'})
+mdb.jobs['Composite-3']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Composite-3'})
+mdb.jobs['Composite-3']._Message(JOB_COMPLETED, {
+    'time': 'Thu Mar 29 14:31:25 2018', 'jobName': 'Composite-3'})
+# Save by yousefik on 2018_03_29-14.43.45; build 6.14-1 2014_06_04-23.11.02 134264

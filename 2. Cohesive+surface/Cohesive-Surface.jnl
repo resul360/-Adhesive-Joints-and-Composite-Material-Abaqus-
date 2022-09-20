@@ -1,0 +1,2482 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 2.5), 
+    point2=(-95.0, 8.75))
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-15.0, -1.25), 
+    point2=(95.0, -10.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    5.90179824829102, 5.19912338256836), value=3.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -18.9342079162598, -9.4398193359375), value=3.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5])
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    -11.6787376403809, 17.3285331726074), value=12.5, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    12.7386741638184, 0.598312616348267), value=0.5, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4])
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Adherend', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Adherend'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(-15.0, 0.0), 
+    point2=(0.0, 1.25))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    -3.41423416137695, 7.45487213134766), value=12.5, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    5.85899353027344, 1.97954177856445), value=0.5, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3])
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='adhesive', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['adhesive'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=5.44, name='__profile__', 
+    sheetSize=217.63, transform=
+    mdb.models['Model-1'].parts['Adherend'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['Adherend'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(40.625, -2.375, 
+    0.0)))
+mdb.models['Model-1'].parts['Adherend'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-54.4, 5.0), point2=
+    (-54.4, 2.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[10])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[10])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[8], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[9], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-42.16, -1.5), 
+    point2=(-42.16, 1.5))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[11])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[11])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[11], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    -43.5082197189331, 6.97954273223877), value=12.5, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[8], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[6])
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    -51.835711479187, -3.21655082702637), value=12.5, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].parts['Adherend'].PartitionFaceBySketch(faces=
+    mdb.models['Model-1'].parts['Adherend'].faces.getSequenceFromMask(('[#3 ]', 
+    ), ), sketch=mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='Adhesive')
+mdb.models['Model-1'].materials['Adhesive'].Elastic(table=((1800.0, 0.33), ))
+mdb.models['Model-1'].HomogeneousSolidSection(material='Adhesive', name=
+    'adhesive', thickness=25.0)
+mdb.models['Model-1'].Material(name='adherend')
+mdb.models['Model-1'].materials['adherend'].Elastic(table=((70000.0, 0.3), ))
+mdb.models['Model-1'].HomogeneousSolidSection(material='adherend', name=
+    'adherend', thickness=25.0)
+mdb.models['Model-1'].parts['Adherend'].Set(faces=
+    mdb.models['Model-1'].parts['Adherend'].faces.getSequenceFromMask(('[#f ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['Adherend'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Adherend'].sets['Set-1'], sectionName=
+    'adherend', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['adhesive'].Set(faces=
+    mdb.models['Model-1'].parts['adhesive'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['adhesive'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['adhesive'].sets['Set-1'], sectionName=
+    'adhesive', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Adherend-1', 
+    part=mdb.models['Model-1'].parts['Adherend'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='adhesive-1', 
+    part=mdb.models['Model-1'].parts['adhesive'])
+mdb.models['Model-1'].rootAssembly.instances['adhesive-1'].translate(vector=(
+    111.25, 0.0, 0.0))
+mdb.models['Model-1'].StaticStep(initialInc=1e-05, maxNumInc=1000, minInc=1e-15
+    , name='Step-1', nlgeom=ON, previous='Initial')
+mdb.models['Model-1'].ContactProperty('Cohesive surface')
+mdb.models['Model-1'].interactionProperties['Cohesive surface'].CohesiveBehavior(
+    defaultPenalties=OFF, table=((1e-06, 1e-06, 1e-06), ))
+mdb.models['Model-1'].interactionProperties['Cohesive surface'].GeometricProperties(
+    contactArea=25.0, padThickness=None)
+mdb.models['Model-1'].interactionProperties['Cohesive surface'].Damage(
+    evolTable=((0.4, ), ), evolutionType=ENERGY, initTable=((20.0, 16.0, 16.0), 
+    ), useEvolution=ON, useStabilization=ON, viscosityCoef=0.0001)
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-1', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['adhesive-1'].edges.getSequenceFromMask(
+    ('[#1 ]', ), ), name='s_Set-1')
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Step-1', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='Cohesive surface', master=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-1'], name='Int-1', 
+    slave=mdb.models['Model-1'].rootAssembly.sets['s_Set-1'], sliding=SMALL, 
+    thickness=ON)
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-2', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#800 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['adhesive-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ), name='s_Set-2')
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Step-1', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='Cohesive surface', master=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-2'], name='Int-2', 
+    slave=mdb.models['Model-1'].rootAssembly.sets['s_Set-2'], sliding=SMALL, 
+    thickness=ON)
+mdb.models['Model-1'].rootAssembly.CoincidentPoint(fixedPoint=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].vertices[10], 
+    movablePoint=
+    mdb.models['Model-1'].rootAssembly.instances['adhesive-1'].vertices[2])
+mdb.models['Model-1'].rootAssembly.DatumPointByOffset(point=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].InterestingPoint(
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges[2], 
+    MIDDLE), vector=(5.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=
+    mdb.models['Model-1'].rootAssembly.datums[11])
+mdb.models['Model-1'].rootAssembly.Set(name='m_Set-3', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[12], ))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ), name='s_Set-3')
+mdb.models['Model-1'].Coupling(controlPoint=
+    mdb.models['Model-1'].rootAssembly.sets['m_Set-3'], couplingType=KINEMATIC, 
+    influenceRadius=WHOLE_SURFACE, localCsys=None, name='Constraint-1', 
+    surface=mdb.models['Model-1'].rootAssembly.sets['s_Set-3'], u1=ON, u2=ON, 
+    ur3=ON)
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#200 ]', ), ), name='Set-5')
+mdb.models['Model-1'].EncastreBC(createStepName='Step-1', localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-5'])
+mdb.models['Model-1'].rootAssembly.Set(name='Set-6', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[12], ))
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-2', region=mdb.models['Model-1'].rootAssembly.sets['Set-6'], u1=2.0, 
+    u2=0.0, ur3=0.0)
+mdb.models['Model-1'].parts['adhesive'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['adhesive'].edges.getSequenceFromMask(('[#f ]', 
+    ), ), size=0.2)
+mdb.models['Model-1'].parts['adhesive'].generateMesh()
+mdb.models['Model-1'].parts['adhesive'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['adhesive'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ))
+mdb.models['Model-1'].parts['adhesive'].seedEdgeByNumber(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['adhesive'].edges.getSequenceFromMask((
+    '[#a ]', ), ), number=4)
+mdb.models['Model-1'].parts['adhesive'].generateMesh()
+mdb.models['Model-1'].parts['Adherend'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Adherend'].edges.getSequenceFromMask((
+    '[#2850 ]', ), ), size=0.2)
+mdb.models['Model-1'].parts['Adherend'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['Model-1'].parts['Adherend'].edges.getSequenceFromMask(('[#2 ]', 
+    ), ), end2Edges=
+    mdb.models['Model-1'].parts['Adherend'].edges.getSequenceFromMask(('[#8 ]', 
+    ), ), maxSize=2.0, minSize=0.2)
+mdb.models['Model-1'].parts['Adherend'].seedEdgeByBias(biasMethod=SINGLE, 
+    constraint=FINER, end1Edges=
+    mdb.models['Model-1'].parts['Adherend'].edges.getSequenceFromMask((
+    '[#100 ]', ), ), end2Edges=
+    mdb.models['Model-1'].parts['Adherend'].edges.getSequenceFromMask((
+    '[#400 ]', ), ), maxSize=2.0, minSize=0.2)
+mdb.models['Model-1'].parts['Adherend'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, edges=
+    mdb.models['Model-1'].parts['Adherend'].edges.getSequenceFromMask((
+    '[#12a5 ]', ), ), size=0.2)
+mdb.models['Model-1'].parts['Adherend'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.Set(name='Load-Point', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[12], ))
+mdb.models['Model-1'].HistoryOutputRequest(createStepName='Step-1', name=
+    'H-Output-2', rebar=EXCLUDE, region=
+    mdb.models['Model-1'].rootAssembly.sets['Load-Point'], sectionPoints=
+    DEFAULT, variables=('U1', 'RF1'))
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Single-Lap-Cohesive-surface', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numGPUs=0, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.jobs['Single-Lap-Cohesive-surface'].submit(consistencyChecking=OFF)
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STARTED, {
+    'phase': BATCHPRE_PHASE, 'clientHost': 'NGB004000016', 'handle': 0, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'WHENEVER A TRANSLATION (ROTATION) DOF AT A NODE IS CONSTRAINED BY A KINEMATIC COUPLING DEFINITION THE TRANSLATION (ROTATION) DOFS FOR THAT NODE CANNOT BE INCLUDED IN ANY OTHER CONSTRAINT INCLUDING MPCS, RIGID BODIES, ETC.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-1_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-2_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'MPCS (EXTERNAL or INTERNAL, including those generated from rigid body definitions), KINEMATIC COUPLINGS, AND/OR EQUATIONS WILL ACTIVATE ADDITIONAL DEGREES OF FREEDOM', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Temp\\Single-Lap-Cohesive-surface.odb', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STARTED, {
+    'phase': STANDARD_PHASE, 'clientHost': 'NGB004000016', 'handle': 8032, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STEP, {
+    'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 0.0, 
+    'attempts': 0, 'timeIncrement': 1e-05, 'increment': 0, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 
+    'iterations': 0, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'Single-Lap-Cohesive-surface', 
+    'memory': 37.0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 1e-05, 
+    'attempts': 1, 'timeIncrement': 1e-05, 'increment': 1, 'stepTime': 1e-05, 
+    'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 2, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 2e-05, 
+    'attempts': 1, 'timeIncrement': 1e-05, 'increment': 2, 'stepTime': 2e-05, 
+    'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 3, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 3.5e-05, 
+    'attempts': 1, 'timeIncrement': 1.5e-05, 'increment': 3, 
+    'stepTime': 3.5e-05, 'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 
+    'severe': 1, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 4, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 5.75e-05, 'attempts': 1, 'timeIncrement': 2.25e-05, 
+    'increment': 4, 'stepTime': 5.75e-05, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 5, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 9.125e-05, 'attempts': 1, 'timeIncrement': 3.375e-05, 
+    'increment': 5, 'stepTime': 9.125e-05, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 6, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.000141875, 'attempts': 1, 'timeIncrement': 5.0625e-05, 
+    'increment': 6, 'stepTime': 0.000141875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 7, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0002178125, 'attempts': 1, 'timeIncrement': 7.59375e-05, 
+    'increment': 7, 'stepTime': 0.0002178125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 8, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00033171875, 'attempts': 1, 'timeIncrement': 0.00011390625, 
+    'increment': 8, 'stepTime': 0.00033171875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 9, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.000502578125, 'attempts': 1, 
+    'timeIncrement': 0.000170859375, 'increment': 9, 
+    'stepTime': 0.000502578125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 10, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0007588671875, 'attempts': 1, 
+    'timeIncrement': 0.0002562890625, 'increment': 10, 
+    'stepTime': 0.0007588671875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 11, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00114330078125, 'attempts': 1, 
+    'timeIncrement': 0.00038443359375, 'increment': 11, 
+    'stepTime': 0.00114330078125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 12, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.001719951171875, 'attempts': 1, 
+    'timeIncrement': 0.000576650390625, 'increment': 12, 
+    'stepTime': 0.001719951171875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 13, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0025849267578125, 'attempts': 1, 
+    'timeIncrement': 0.0008649755859375, 'increment': 13, 
+    'stepTime': 0.0025849267578125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 14, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00388239013671875, 'attempts': 1, 
+    'timeIncrement': 0.00129746337890625, 'increment': 14, 
+    'stepTime': 0.00388239013671875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 15, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00582858520507813, 'attempts': 1, 
+    'timeIncrement': 0.00194619506835938, 'increment': 15, 
+    'stepTime': 0.00582858520507813, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 16, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00874787780761719, 'attempts': 1, 
+    'timeIncrement': 0.00291929260253906, 'increment': 16, 
+    'stepTime': 0.00874787780761719, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 17, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0131268167114258, 'attempts': 1, 
+    'timeIncrement': 0.0043789389038086, 'increment': 17, 
+    'stepTime': 0.0131268167114258, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 18, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0196952250671387, 'attempts': 1, 
+    'timeIncrement': 0.00656840835571289, 'increment': 18, 
+    'stepTime': 0.0196952250671387, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 19, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.029547837600708, 'attempts': 1, 
+    'timeIncrement': 0.00985261253356934, 'increment': 19, 
+    'stepTime': 0.029547837600708, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 20, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.044326756401062, 'attempts': 1, 
+    'timeIncrement': 0.014778918800354, 'increment': 20, 
+    'stepTime': 0.044326756401062, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 21, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.066495134601593, 'attempts': 1, 
+    'timeIncrement': 0.022168378200531, 'increment': 21, 
+    'stepTime': 0.066495134601593, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 22, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0997477019023895, 'attempts': 1, 
+    'timeIncrement': 0.0332525673007965, 'increment': 22, 
+    'stepTime': 0.0997477019023895, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 18, 'iterations': 19, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 23, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.149626552853584, 'attempts': 1, 
+    'timeIncrement': 0.0498788509511948, 'increment': 23, 
+    'stepTime': 0.149626552853584, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 24, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.224444829280377, 'attempts': 1, 
+    'timeIncrement': 0.0748182764267922, 'increment': 24, 
+    'stepTime': 0.224444829280377, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 25, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.336672243920565, 'attempts': 1, 
+    'timeIncrement': 0.112227414640188, 'increment': 25, 
+    'stepTime': 0.336672243920565, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 26, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.505013365880847, 'attempts': 1, 
+    'timeIncrement': 0.168341121960282, 'increment': 26, 
+    'stepTime': 0.505013365880847, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 27, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.757525048821271, 'attempts': 1, 
+    'timeIncrement': 0.252511682940424, 'increment': 27, 
+    'stepTime': 0.757525048821271, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 28, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 1.0, 
+    'attempts': 1, 'timeIncrement': 0.242474951178729, 'increment': 28, 
+    'stepTime': 1.0, 'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(END_STEP, {
+    'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(COMPLETED, {
+    'phase': STANDARD_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(JOB_COMPLETED, {
+    'time': 'Sat Mar 03 17:56:06 2018', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+del mdb.models['Model-1'].interactions['Int-2']
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-3', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Adherend-1'].edges.getSequenceFromMask(
+    ('[#810 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['adhesive-1'].edges.getSequenceFromMask(
+    ('[#5 ]', ), ), name='s_Set-8')
+mdb.models['Model-1'].interactions['Int-1'].setValues(adjustMethod=NONE, 
+    bondingSet=None, enforcement=SURFACE_TO_SURFACE, initialClearance=OMIT, 
+    master=mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-3'], slave=
+    mdb.models['Model-1'].rootAssembly.sets['s_Set-8'], sliding=SMALL, 
+    supplementaryContact=SELECTIVE, thickness=ON)
+mdb.jobs['Single-Lap-Cohesive-surface'].submit(consistencyChecking=OFF)
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STARTED, {
+    'phase': BATCHPRE_PHASE, 'clientHost': 'NGB004000016', 'handle': 0, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'WHENEVER A TRANSLATION (ROTATION) DOF AT A NODE IS CONSTRAINED BY A KINEMATIC COUPLING DEFINITION THE TRANSLATION (ROTATION) DOFS FOR THAT NODE CANNOT BE INCLUDED IN ANY OTHER CONSTRAINT INCLUDING MPCS, RIGID BODIES, ETC.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-8_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'MPCS (EXTERNAL or INTERNAL, including those generated from rigid body definitions), KINEMATIC COUPLINGS, AND/OR EQUATIONS WILL ACTIVATE ADDITIONAL DEGREES OF FREEDOM', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Temp\\Single-Lap-Cohesive-surface.odb', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STARTED, {
+    'phase': STANDARD_PHASE, 'clientHost': 'NGB004000016', 'handle': 3876, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STEP, {
+    'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 0.0, 
+    'attempts': 0, 'timeIncrement': 1e-05, 'increment': 0, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 
+    'iterations': 0, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'Single-Lap-Cohesive-surface', 
+    'memory': 37.0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 1e-05, 
+    'attempts': 1, 'timeIncrement': 1e-05, 'increment': 1, 'stepTime': 1e-05, 
+    'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 2, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 2e-05, 
+    'attempts': 1, 'timeIncrement': 1e-05, 'increment': 2, 'stepTime': 2e-05, 
+    'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 3, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 3.5e-05, 
+    'attempts': 1, 'timeIncrement': 1.5e-05, 'increment': 3, 
+    'stepTime': 3.5e-05, 'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 
+    'severe': 1, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 4, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 5.75e-05, 'attempts': 1, 'timeIncrement': 2.25e-05, 
+    'increment': 4, 'stepTime': 5.75e-05, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 5, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 9.125e-05, 'attempts': 1, 'timeIncrement': 3.375e-05, 
+    'increment': 5, 'stepTime': 9.125e-05, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 6, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.000141875, 'attempts': 1, 'timeIncrement': 5.0625e-05, 
+    'increment': 6, 'stepTime': 0.000141875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 7, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0002178125, 'attempts': 1, 'timeIncrement': 7.59375e-05, 
+    'increment': 7, 'stepTime': 0.0002178125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 8, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00033171875, 'attempts': 1, 'timeIncrement': 0.00011390625, 
+    'increment': 8, 'stepTime': 0.00033171875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 9, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.000502578125, 'attempts': 1, 
+    'timeIncrement': 0.000170859375, 'increment': 9, 
+    'stepTime': 0.000502578125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 10, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0007588671875, 'attempts': 1, 
+    'timeIncrement': 0.0002562890625, 'increment': 10, 
+    'stepTime': 0.0007588671875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 11, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00114330078125, 'attempts': 1, 
+    'timeIncrement': 0.00038443359375, 'increment': 11, 
+    'stepTime': 0.00114330078125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 12, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.001719951171875, 'attempts': 1, 
+    'timeIncrement': 0.000576650390625, 'increment': 12, 
+    'stepTime': 0.001719951171875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 13, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0025849267578125, 'attempts': 1, 
+    'timeIncrement': 0.0008649755859375, 'increment': 13, 
+    'stepTime': 0.0025849267578125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 14, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00388239013671875, 'attempts': 1, 
+    'timeIncrement': 0.00129746337890625, 'increment': 14, 
+    'stepTime': 0.00388239013671875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 15, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00582858520507813, 'attempts': 1, 
+    'timeIncrement': 0.00194619506835938, 'increment': 15, 
+    'stepTime': 0.00582858520507813, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 16, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00874787780761719, 'attempts': 1, 
+    'timeIncrement': 0.00291929260253906, 'increment': 16, 
+    'stepTime': 0.00874787780761719, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 17, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0131268167114258, 'attempts': 1, 
+    'timeIncrement': 0.0043789389038086, 'increment': 17, 
+    'stepTime': 0.0131268167114258, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 18, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0196952250671387, 'attempts': 1, 
+    'timeIncrement': 0.00656840835571289, 'increment': 18, 
+    'stepTime': 0.0196952250671387, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 19, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.029547837600708, 'attempts': 1, 
+    'timeIncrement': 0.00985261253356934, 'increment': 19, 
+    'stepTime': 0.029547837600708, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 20, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.044326756401062, 'attempts': 1, 
+    'timeIncrement': 0.014778918800354, 'increment': 20, 
+    'stepTime': 0.044326756401062, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 21, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.066495134601593, 'attempts': 1, 
+    'timeIncrement': 0.022168378200531, 'increment': 21, 
+    'stepTime': 0.066495134601593, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 22, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0997477019023895, 'attempts': 1, 
+    'timeIncrement': 0.0332525673007965, 'increment': 22, 
+    'stepTime': 0.0997477019023895, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 18, 'iterations': 19, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 23, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.149626552853584, 'attempts': 1, 
+    'timeIncrement': 0.0498788509511948, 'increment': 23, 
+    'stepTime': 0.149626552853584, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 24, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.224444829280377, 'attempts': 1, 
+    'timeIncrement': 0.0748182764267922, 'increment': 24, 
+    'stepTime': 0.224444829280377, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 25, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.336672243920565, 'attempts': 1, 
+    'timeIncrement': 0.112227414640188, 'increment': 25, 
+    'stepTime': 0.336672243920565, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 26, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.505013365880847, 'attempts': 1, 
+    'timeIncrement': 0.168341121960282, 'increment': 26, 
+    'stepTime': 0.505013365880847, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 27, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.757525048821271, 'attempts': 1, 
+    'timeIncrement': 0.252511682940424, 'increment': 27, 
+    'stepTime': 0.757525048821271, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 28, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 1.0, 
+    'attempts': 1, 'timeIncrement': 0.242474951178729, 'increment': 28, 
+    'stepTime': 1.0, 'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(END_STEP, {
+    'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(COMPLETED, {
+    'phase': STANDARD_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(JOB_COMPLETED, {
+    'time': 'Sat Mar 03 17:59:22 2018', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.models['Model-1'].interactionProperties['Cohesive surface'].cohesiveBehavior.setValues(
+    table=((1000000.0, 1000000.0, 1000000.0), ))
+mdb.jobs['Single-Lap-Cohesive-surface'].submit(consistencyChecking=OFF)
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STARTED, {
+    'phase': BATCHPRE_PHASE, 'clientHost': 'NGB004000016', 'handle': 0, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'WHENEVER A TRANSLATION (ROTATION) DOF AT A NODE IS CONSTRAINED BY A KINEMATIC COUPLING DEFINITION THE TRANSLATION (ROTATION) DOFS FOR THAT NODE CANNOT BE INCLUDED IN ANY OTHER CONSTRAINT INCLUDING MPCS, RIGID BODIES, ETC.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-8_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': BATCHPRE_PHASE, 
+    'message': 'MPCS (EXTERNAL or INTERNAL, including those generated from rigid body definitions), KINEMATIC COUPLINGS, AND/OR EQUATIONS WILL ACTIVATE ADDITIONAL DEGREES OF FREEDOM', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Temp\\Single-Lap-Cohesive-surface.odb', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STARTED, {
+    'phase': STANDARD_PHASE, 'clientHost': 'NGB004000016', 'handle': 21604, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STEP, {
+    'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 0.0, 
+    'attempts': 0, 'timeIncrement': 1e-05, 'increment': 0, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 
+    'iterations': 0, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'Single-Lap-Cohesive-surface', 
+    'memory': 37.0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 1e-05, 
+    'attempts': 1, 'timeIncrement': 1e-05, 'increment': 1, 'stepTime': 1e-05, 
+    'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 
+    'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 2, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 2e-05, 
+    'attempts': 1, 'timeIncrement': 1e-05, 'increment': 2, 'stepTime': 2e-05, 
+    'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 3, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 3.5e-05, 
+    'attempts': 1, 'timeIncrement': 1.5e-05, 'increment': 3, 
+    'stepTime': 3.5e-05, 'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 4, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 5.75e-05, 'attempts': 1, 'timeIncrement': 2.25e-05, 
+    'increment': 4, 'stepTime': 5.75e-05, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 5, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 9.125e-05, 'attempts': 1, 'timeIncrement': 3.375e-05, 
+    'increment': 5, 'stepTime': 9.125e-05, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 6, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.000141875, 'attempts': 1, 'timeIncrement': 5.0625e-05, 
+    'increment': 6, 'stepTime': 0.000141875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 7, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0002178125, 'attempts': 1, 'timeIncrement': 7.59375e-05, 
+    'increment': 7, 'stepTime': 0.0002178125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 8, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00033171875, 'attempts': 1, 'timeIncrement': 0.00011390625, 
+    'increment': 8, 'stepTime': 0.00033171875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 9, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.000502578125, 'attempts': 1, 
+    'timeIncrement': 0.000170859375, 'increment': 9, 
+    'stepTime': 0.000502578125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 10, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0007588671875, 'attempts': 1, 
+    'timeIncrement': 0.0002562890625, 'increment': 10, 
+    'stepTime': 0.0007588671875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 11, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00114330078125, 'attempts': 1, 
+    'timeIncrement': 0.00038443359375, 'increment': 11, 
+    'stepTime': 0.00114330078125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 12, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.001719951171875, 'attempts': 1, 
+    'timeIncrement': 0.000576650390625, 'increment': 12, 
+    'stepTime': 0.001719951171875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 13, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0025849267578125, 'attempts': 1, 
+    'timeIncrement': 0.0008649755859375, 'increment': 13, 
+    'stepTime': 0.0025849267578125, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 14, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00388239013671875, 'attempts': 1, 
+    'timeIncrement': 0.00129746337890625, 'increment': 14, 
+    'stepTime': 0.00388239013671875, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 15, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00582858520507813, 'attempts': 1, 
+    'timeIncrement': 0.00194619506835938, 'increment': 15, 
+    'stepTime': 0.00582858520507813, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 16, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.00874787780761719, 'attempts': 1, 
+    'timeIncrement': 0.00291929260253906, 'increment': 16, 
+    'stepTime': 0.00874787780761719, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 17, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0131268167114258, 'attempts': 1, 
+    'timeIncrement': 0.0043789389038086, 'increment': 17, 
+    'stepTime': 0.0131268167114258, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 18, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0196952250671387, 'attempts': 1, 
+    'timeIncrement': 0.00656840835571289, 'increment': 18, 
+    'stepTime': 0.0196952250671387, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 10, 
+    'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0196952250671387, 'attempts': ' 1U', 
+    'timeIncrement': 0.00656840835571289, 'increment': 19, 
+    'stepTime': 0.0196952250671387, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 4, 'iterations': 15, 
+    'phase': STANDARD_PHASE, 'equilibrium': 11})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0196952250671387, 'attempts': ' 2U', 
+    'timeIncrement': 0.00328420417785645, 'increment': 19, 
+    'stepTime': 0.0196952250671387, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 10, 
+    'phase': STANDARD_PHASE, 'equilibrium': 9})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 19, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0213373271560669, 'attempts': 3, 
+    'timeIncrement': 0.00164210208892822, 'increment': 19, 
+    'stepTime': 0.0213373271560669, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 15, 
+    'phase': STANDARD_PHASE, 'equilibrium': 14})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 20, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0225689037227631, 'attempts': 1, 
+    'timeIncrement': 0.00123157656669617, 'increment': 20, 
+    'stepTime': 0.0225689037227631, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 12, 
+    'phase': STANDARD_PHASE, 'equilibrium': 12})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 21, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0234925861477852, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 21, 
+    'stepTime': 0.0234925861477852, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 12, 
+    'phase': STANDARD_PHASE, 'equilibrium': 11})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 22, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0244162685728073, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 22, 
+    'stepTime': 0.0244162685728073, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 11, 
+    'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 23, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0253399509978294, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 23, 
+    'stepTime': 0.0253399509978294, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 11, 
+    'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 24, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0262636334228516, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 24, 
+    'stepTime': 0.0262636334228516, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 11, 
+    'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 25, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0271873158478737, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 25, 
+    'stepTime': 0.0271873158478737, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 10, 
+    'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 26, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0281109982728958, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 26, 
+    'stepTime': 0.0281109982728958, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 9, 
+    'phase': STANDARD_PHASE, 'equilibrium': 8})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 27, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0290346806979179, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 27, 
+    'stepTime': 0.0290346806979179, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 10, 
+    'phase': STANDARD_PHASE, 'equilibrium': 9})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 28, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0299583631229401, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 28, 
+    'stepTime': 0.0299583631229401, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 10, 
+    'phase': STANDARD_PHASE, 'equilibrium': 9})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 29, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0308820455479622, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 29, 
+    'stepTime': 0.0308820455479622, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 8, 
+    'phase': STANDARD_PHASE, 'equilibrium': 7})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 30, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0318057279729843, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 30, 
+    'stepTime': 0.0318057279729843, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 8, 
+    'phase': STANDARD_PHASE, 'equilibrium': 7})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 31, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0327294103980064, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 31, 
+    'stepTime': 0.0327294103980064, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 32, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0336530928230286, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 32, 
+    'stepTime': 0.0336530928230286, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 33, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0345767752480507, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 33, 
+    'stepTime': 0.0345767752480507, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 34, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0355004576730728, 'attempts': 1, 
+    'timeIncrement': 0.000923682425022125, 'increment': 34, 
+    'stepTime': 0.0355004576730728, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 35, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.036885981310606, 'attempts': 1, 
+    'timeIncrement': 0.00138552363753319, 'increment': 35, 
+    'stepTime': 0.036885981310606, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 11, 
+    'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 36, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0382715049481392, 'attempts': 1, 
+    'timeIncrement': 0.00138552363753319, 'increment': 36, 
+    'stepTime': 0.0382715049481392, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 12, 
+    'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 37, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0396570285856724, 'attempts': 1, 
+    'timeIncrement': 0.00138552363753319, 'increment': 37, 
+    'stepTime': 0.0396570285856724, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 38, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0410425522232055, 'attempts': 1, 
+    'timeIncrement': 0.00138552363753319, 'increment': 38, 
+    'stepTime': 0.0410425522232055, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 4, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0410425522232055, 'attempts': ' 1U', 
+    'timeIncrement': 0.00138552363753319, 'increment': 39, 
+    'stepTime': 0.0410425522232055, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 5, 'iterations': 8, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 39, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0413889331325888, 'attempts': 2, 
+    'timeIncrement': 0.000346380909383297, 'increment': 39, 
+    'stepTime': 0.0413889331325888, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 40, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0419085044966638, 'attempts': 1, 
+    'timeIncrement': 0.000519571364074946, 'increment': 40, 
+    'stepTime': 0.0419085044966638, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 4, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0419085044966638, 'attempts': ' 1U', 
+    'timeIncrement': 0.000779357046112418, 'increment': 41, 
+    'stepTime': 0.0419085044966638, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 8, 'iterations': 8, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 41, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0421033437581919, 'attempts': 2, 
+    'timeIncrement': 0.000194839261528105, 'increment': 41, 
+    'stepTime': 0.0421033437581919, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 5, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 42, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0423956026504841, 'attempts': 1, 
+    'timeIncrement': 0.000292258892292157, 'increment': 42, 
+    'stepTime': 0.0423956026504841, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 4, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 43, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0428339909889223, 'attempts': 1, 
+    'timeIncrement': 0.000438388338438235, 'increment': 43, 
+    'stepTime': 0.0428339909889223, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 3, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0428339909889223, 'attempts': ' 1U', 
+    'timeIncrement': 0.000657582507657353, 'increment': 44, 
+    'stepTime': 0.0428339909889223, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 11, 'iterations': 11, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 44, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0429983866158366, 'attempts': 2, 
+    'timeIncrement': 0.000164395626914338, 'increment': 44, 
+    'stepTime': 0.0429983866158366, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 4, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0429983866158366, 'attempts': ' 1U', 
+    'timeIncrement': 0.000246593440371507, 'increment': 45, 
+    'stepTime': 0.0429983866158366, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 6, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 45, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0430600349759295, 'attempts': 2, 
+    'timeIncrement': 6.16483600928769e-05, 'increment': 45, 
+    'stepTime': 0.0430600349759295, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 46, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0431525075160688, 'attempts': 1, 
+    'timeIncrement': 9.24725401393153e-05, 'increment': 46, 
+    'stepTime': 0.0431525075160688, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0431525075160688, 'attempts': ' 1U', 
+    'timeIncrement': 0.000138708810208973, 'increment': 47, 
+    'stepTime': 0.0431525075160688, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 8, 'iterations': 8, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 47, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0431871847186211, 'attempts': 2, 
+    'timeIncrement': 3.46772025522432e-05, 'increment': 47, 
+    'stepTime': 0.0431871847186211, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0431871847186211, 'attempts': ' 1U', 
+    'timeIncrement': 5.20158038283648e-05, 'increment': 48, 
+    'stepTime': 0.0431871847186211, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 48, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0432001886695782, 'attempts': 2, 
+    'timeIncrement': 1.30039509570912e-05, 'increment': 48, 
+    'stepTime': 0.0432001886695782, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 49, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0432196945960138, 'attempts': 1, 
+    'timeIncrement': 1.95059264356368e-05, 'increment': 49, 
+    'stepTime': 0.0432196945960138, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 50, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0432489534856672, 'attempts': 1, 
+    'timeIncrement': 2.92588896534552e-05, 'increment': 50, 
+    'stepTime': 0.0432489534856672, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 51, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0432928418201474, 'attempts': 1, 
+    'timeIncrement': 4.38883344801828e-05, 'increment': 51, 
+    'stepTime': 0.0432928418201474, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 52, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0433586743218677, 'attempts': 1, 
+    'timeIncrement': 6.58325017202743e-05, 'increment': 52, 
+    'stepTime': 0.0433586743218677, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0433586743218677, 'attempts': ' 1U', 
+    'timeIncrement': 9.87487525804114e-05, 'increment': 53, 
+    'stepTime': 0.0433586743218677, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 53, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0433833615100128, 'attempts': 2, 
+    'timeIncrement': 2.46871881451028e-05, 'increment': 53, 
+    'stepTime': 0.0433833615100128, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 54, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0434203922922305, 'attempts': 1, 
+    'timeIncrement': 3.70307822176543e-05, 'increment': 54, 
+    'stepTime': 0.0434203922922305, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 55, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0434759384655569, 'attempts': 1, 
+    'timeIncrement': 5.55461733264814e-05, 'increment': 55, 
+    'stepTime': 0.0434759384655569, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 56, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0435592577255467, 'attempts': 1, 
+    'timeIncrement': 8.33192599897221e-05, 'increment': 56, 
+    'stepTime': 0.0435592577255467, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0435592577255467, 'attempts': ' 1U', 
+    'timeIncrement': 0.000124978889984583, 'increment': 57, 
+    'stepTime': 0.0435592577255467, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 17, 
+    'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 57, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0435905024480428, 'attempts': 2, 
+    'timeIncrement': 3.12447224961458e-05, 'increment': 57, 
+    'stepTime': 0.0435905024480428, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 58, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.043637369531787, 'attempts': 1, 
+    'timeIncrement': 4.68670837442187e-05, 'increment': 58, 
+    'stepTime': 0.043637369531787, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 59, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0437076701574034, 'attempts': 1, 
+    'timeIncrement': 7.0300625616328e-05, 'increment': 59, 
+    'stepTime': 0.0437076701574034, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 60, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0438131210958278, 'attempts': 1, 
+    'timeIncrement': 0.000105450938424492, 'increment': 60, 
+    'stepTime': 0.0438131210958278, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 61, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0439712975034646, 'attempts': 1, 
+    'timeIncrement': 0.000158176407636738, 'increment': 61, 
+    'stepTime': 0.0439712975034646, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 62, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0442085621149197, 'attempts': 1, 
+    'timeIncrement': 0.000237264611455107, 'increment': 62, 
+    'stepTime': 0.0442085621149197, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 63, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0445644590321024, 'attempts': 1, 
+    'timeIncrement': 0.000355896917182661, 'increment': 63, 
+    'stepTime': 0.0445644590321024, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 64, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0450983044078764, 'attempts': 1, 
+    'timeIncrement': 0.000533845375773991, 'increment': 64, 
+    'stepTime': 0.0450983044078764, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 65, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0458990724715373, 'attempts': 1, 
+    'timeIncrement': 0.000800768063660986, 'increment': 65, 
+    'stepTime': 0.0458990724715373, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 66, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0471002245670288, 'attempts': 1, 
+    'timeIncrement': 0.00120115209549148, 'increment': 66, 
+    'stepTime': 0.0471002245670288, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 3, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 67, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.048901952710266, 'attempts': 1, 
+    'timeIncrement': 0.00180172814323722, 'increment': 67, 
+    'stepTime': 0.048901952710266, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 5, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 68, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0516045449251219, 'attempts': 1, 
+    'timeIncrement': 0.00270259221485583, 'increment': 68, 
+    'stepTime': 0.0516045449251219, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 4, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 69, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0556584332474056, 'attempts': 1, 
+    'timeIncrement': 0.00405388832228374, 'increment': 69, 
+    'stepTime': 0.0556584332474056, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 3, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0556584332474056, 'attempts': ' 1U', 
+    'timeIncrement': 0.00608083248342562, 'increment': 70, 
+    'stepTime': 0.0556584332474056, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 70, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.057178641368262, 'attempts': 2, 
+    'timeIncrement': 0.0015202081208564, 'increment': 70, 
+    'stepTime': 0.057178641368262, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 71, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0594589535495466, 'attempts': 1, 
+    'timeIncrement': 0.00228031218128461, 'increment': 71, 
+    'stepTime': 0.0594589535495466, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 72, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0628794218214735, 'attempts': 1, 
+    'timeIncrement': 0.00342046827192691, 'increment': 72, 
+    'stepTime': 0.0628794218214735, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 73, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0680101242293639, 'attempts': 1, 
+    'timeIncrement': 0.00513070240789036, 'increment': 73, 
+    'stepTime': 0.0680101242293639, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0680101242293639, 'attempts': ' 1U', 
+    'timeIncrement': 0.00769605361183554, 'increment': 74, 
+    'stepTime': 0.0680101242293639, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 3, 'iterations': 12, 
+    'phase': STANDARD_PHASE, 'equilibrium': 9})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0680101242293639, 'attempts': ' 2U', 
+    'timeIncrement': 0.00192401340295889, 'increment': 74, 
+    'stepTime': 0.0680101242293639, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 74, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0684911275801036, 'attempts': 3, 
+    'timeIncrement': 0.000481003350739722, 'increment': 74, 
+    'stepTime': 0.0684911275801036, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 75, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0692126326062132, 'attempts': 1, 
+    'timeIncrement': 0.000721505026109582, 'increment': 75, 
+    'stepTime': 0.0692126326062132, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 76, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0702948901453776, 'attempts': 1, 
+    'timeIncrement': 0.00108225753916437, 'increment': 76, 
+    'stepTime': 0.0702948901453776, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 77, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0719182764541241, 'attempts': 1, 
+    'timeIncrement': 0.00162338630874656, 'increment': 77, 
+    'stepTime': 0.0719182764541241, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 78, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.074353355917244, 'attempts': 1, 
+    'timeIncrement': 0.00243507946311984, 'increment': 78, 
+    'stepTime': 0.074353355917244, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 79, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0780059751119237, 'attempts': 1, 
+    'timeIncrement': 0.00365261919467976, 'increment': 79, 
+    'stepTime': 0.0780059751119237, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0780059751119237, 'attempts': ' 1U', 
+    'timeIncrement': 0.00547892879201964, 'increment': 80, 
+    'stepTime': 0.0780059751119237, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 4, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 80, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0793757073099286, 'attempts': 2, 
+    'timeIncrement': 0.00136973219800491, 'increment': 80, 
+    'stepTime': 0.0793757073099286, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 81, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.081430305606936, 'attempts': 1, 
+    'timeIncrement': 0.00205459829700737, 'increment': 81, 
+    'stepTime': 0.081430305606936, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 82, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.084512203052447, 'attempts': 1, 
+    'timeIncrement': 0.00308189744551105, 'increment': 82, 
+    'stepTime': 0.084512203052447, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.084512203052447, 'attempts': ' 1U', 
+    'timeIncrement': 0.00462284616826657, 'increment': 83, 
+    'stepTime': 0.084512203052447, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 14, 
+    'phase': STANDARD_PHASE, 'equilibrium': 12})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 83, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0856679145945137, 'attempts': 2, 
+    'timeIncrement': 0.00115571154206664, 'increment': 83, 
+    'stepTime': 0.0856679145945137, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 3, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 84, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0874014819076137, 'attempts': 1, 
+    'timeIncrement': 0.00173356731309996, 'increment': 84, 
+    'stepTime': 0.0874014819076137, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 85, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0891350492207136, 'attempts': 1, 
+    'timeIncrement': 0.00173356731309996, 'increment': 85, 
+    'stepTime': 0.0891350492207136, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 86, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0908686165338136, 'attempts': 1, 
+    'timeIncrement': 0.00173356731309996, 'increment': 86, 
+    'stepTime': 0.0908686165338136, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 87, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0934689675034635, 'attempts': 1, 
+    'timeIncrement': 0.00260035096964995, 'increment': 87, 
+    'stepTime': 0.0934689675034635, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 88, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0960693184731135, 'attempts': 1, 
+    'timeIncrement': 0.00260035096964995, 'increment': 88, 
+    'stepTime': 0.0960693184731135, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 3, 'iterations': 8, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 89, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.0986696694427634, 'attempts': 1, 
+    'timeIncrement': 0.00260035096964995, 'increment': 89, 
+    'stepTime': 0.0986696694427634, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 90, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.101270020412413, 'attempts': 1, 
+    'timeIncrement': 0.00260035096964995, 'increment': 90, 
+    'stepTime': 0.101270020412413, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 91, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.105170546866888, 'attempts': 1, 
+    'timeIncrement': 0.00390052645447492, 'increment': 91, 
+    'stepTime': 0.105170546866888, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 92, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.109071073321363, 'attempts': 1, 
+    'timeIncrement': 0.00390052645447492, 'increment': 92, 
+    'stepTime': 0.109071073321363, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 93, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.112971599775838, 'attempts': 1, 
+    'timeIncrement': 0.00390052645447492, 'increment': 93, 
+    'stepTime': 0.112971599775838, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.112971599775838, 'attempts': ' 1U', 
+    'timeIncrement': 0.00390052645447492, 'increment': 94, 
+    'stepTime': 0.112971599775838, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 12, 
+    'phase': STANDARD_PHASE, 'equilibrium': 11})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 94, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.113946731389457, 'attempts': 2, 
+    'timeIncrement': 0.00097513161361873, 'increment': 94, 
+    'stepTime': 0.113946731389457, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 95, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.114921863003076, 'attempts': 1, 
+    'timeIncrement': 0.00097513161361873, 'increment': 95, 
+    'stepTime': 0.114921863003076, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 96, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.116384560423504, 'attempts': 1, 
+    'timeIncrement': 0.00146269742042809, 'increment': 96, 
+    'stepTime': 0.116384560423504, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 97, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.117847257843932, 'attempts': 1, 
+    'timeIncrement': 0.00146269742042809, 'increment': 97, 
+    'stepTime': 0.117847257843932, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 98, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.11930995526436, 'attempts': 1, 
+    'timeIncrement': 0.00146269742042809, 'increment': 98, 
+    'stepTime': 0.11930995526436, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 99, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.121504001395002, 'attempts': 1, 
+    'timeIncrement': 0.00219404613064214, 'increment': 99, 
+    'stepTime': 0.121504001395002, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 100, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.124795070590965, 'attempts': 1, 
+    'timeIncrement': 0.00329106919596321, 'increment': 100, 
+    'stepTime': 0.124795070590965, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 101, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.128086139786928, 'attempts': 1, 
+    'timeIncrement': 0.00329106919596321, 'increment': 101, 
+    'stepTime': 0.128086139786928, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 3, 'iterations': 9, 
+    'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 102, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.131377208982892, 'attempts': 1, 
+    'timeIncrement': 0.00329106919596321, 'increment': 102, 
+    'stepTime': 0.131377208982892, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 9, 
+    'phase': STANDARD_PHASE, 'equilibrium': 8})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 103, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.134668278178855, 'attempts': 1, 
+    'timeIncrement': 0.00329106919596321, 'increment': 103, 
+    'stepTime': 0.134668278178855, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 104, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.137959347374818, 'attempts': 1, 
+    'timeIncrement': 0.00329106919596321, 'increment': 104, 
+    'stepTime': 0.137959347374818, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 105, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.142895951168763, 'attempts': 1, 
+    'timeIncrement': 0.00493660379394482, 'increment': 105, 
+    'stepTime': 0.142895951168763, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 106, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.15030085685968, 'attempts': 1, 
+    'timeIncrement': 0.00740490569091723, 'increment': 106, 
+    'stepTime': 0.15030085685968, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 107, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.157705762550597, 'attempts': 1, 
+    'timeIncrement': 0.00740490569091723, 'increment': 107, 
+    'stepTime': 0.157705762550597, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 12, 
+    'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 108, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.165110668241515, 'attempts': 1, 
+    'timeIncrement': 0.00740490569091723, 'increment': 108, 
+    'stepTime': 0.165110668241515, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 109, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.172515573932432, 'attempts': 1, 
+    'timeIncrement': 0.00740490569091723, 'increment': 109, 
+    'stepTime': 0.172515573932432, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 110, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.179920479623349, 'attempts': 1, 
+    'timeIncrement': 0.00740490569091723, 'increment': 110, 
+    'stepTime': 0.179920479623349, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 3, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.179920479623349, 'attempts': ' 1U', 
+    'timeIncrement': 0.00740490569091723, 'increment': 111, 
+    'stepTime': 0.179920479623349, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 111, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.181771706046078, 'attempts': 2, 
+    'timeIncrement': 0.00185122642272931, 'increment': 111, 
+    'stepTime': 0.181771706046078, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 112, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.183622932468808, 'attempts': 1, 
+    'timeIncrement': 0.00185122642272931, 'increment': 112, 
+    'stepTime': 0.183622932468808, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 6})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.183622932468808, 'attempts': ' 1U', 
+    'timeIncrement': 0.00185122642272931, 'increment': 113, 
+    'stepTime': 0.183622932468808, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 4, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 113, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.18408573907449, 'attempts': 2, 
+    'timeIncrement': 0.000462806605682327, 'increment': 113, 
+    'stepTime': 0.18408573907449, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 114, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.184548545680172, 'attempts': 1, 
+    'timeIncrement': 0.000462806605682327, 'increment': 114, 
+    'stepTime': 0.184548545680172, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 115, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.185242755588696, 'attempts': 1, 
+    'timeIncrement': 0.00069420990852349, 'increment': 115, 
+    'stepTime': 0.185242755588696, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 116, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.186284070451481, 'attempts': 1, 
+    'timeIncrement': 0.00104131486278524, 'increment': 116, 
+    'stepTime': 0.186284070451481, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 117, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.187846042745659, 'attempts': 1, 
+    'timeIncrement': 0.00156197229417785, 'increment': 117, 
+    'stepTime': 0.187846042745659, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.187846042745659, 'attempts': ' 1U', 
+    'timeIncrement': 0.00234295844126678, 'increment': 118, 
+    'stepTime': 0.187846042745659, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 118, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.188431782355976, 'attempts': 2, 
+    'timeIncrement': 0.000585739610316695, 'increment': 118, 
+    'stepTime': 0.188431782355976, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 119, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.189310391771451, 'attempts': 1, 
+    'timeIncrement': 0.000878609415475042, 'increment': 119, 
+    'stepTime': 0.189310391771451, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 120, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.190628305894663, 'attempts': 1, 
+    'timeIncrement': 0.00131791412321256, 'increment': 120, 
+    'stepTime': 0.190628305894663, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.190628305894663, 'attempts': ' 1U', 
+    'timeIncrement': 0.00197687118481885, 'increment': 121, 
+    'stepTime': 0.190628305894663, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 6, 'iterations': 9, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 121, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.191122523690868, 'attempts': 2, 
+    'timeIncrement': 0.000494217796204711, 'increment': 121, 
+    'stepTime': 0.191122523690868, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 122, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.191863850385175, 'attempts': 1, 
+    'timeIncrement': 0.000741326694307067, 'increment': 122, 
+    'stepTime': 0.191863850385175, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 7})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 123, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.192605177079482, 'attempts': 1, 
+    'timeIncrement': 0.000741326694307067, 'increment': 123, 
+    'stepTime': 0.192605177079482, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 11, 
+    'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.192605177079482, 'attempts': ' 1U', 
+    'timeIncrement': 0.000741326694307067, 'increment': 124, 
+    'stepTime': 0.192605177079482, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 12, 'iterations': 13, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 124, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.192790508753059, 'attempts': 2, 
+    'timeIncrement': 0.000185331673576767, 'increment': 124, 
+    'stepTime': 0.192790508753059, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 125, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.192975840426636, 'attempts': 1, 
+    'timeIncrement': 0.000185331673576767, 'increment': 125, 
+    'stepTime': 0.192975840426636, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 7})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 126, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193161172100212, 'attempts': 1, 
+    'timeIncrement': 0.000185331673576767, 'increment': 126, 
+    'stepTime': 0.193161172100212, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 12, 
+    'phase': STANDARD_PHASE, 'equilibrium': 11})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(WARNING, {
+    'phase': STANDARD_PHASE, 
+    'message': 'EXCESSIVE DISTORTION AT A TOTAL OF 1 INTEGRATION POINTS IN SOLID (CONTINUUM) ELEMENTS', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193161172100212, 'attempts': ' 1U', 
+    'timeIncrement': 0.000138998755182575, 'increment': 127, 
+    'stepTime': 0.193161172100212, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 127, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193195921789008, 'attempts': 2, 
+    'timeIncrement': 3.47496887956438e-05, 'increment': 127, 
+    'stepTime': 0.193195921789008, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 12, 'iterations': 12, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 128, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193230671477804, 'attempts': 1, 
+    'timeIncrement': 3.47496887956438e-05, 'increment': 128, 
+    'stepTime': 0.193230671477804, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 5, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 129, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193282796010997, 'attempts': 1, 
+    'timeIncrement': 5.21245331934657e-05, 'increment': 129, 
+    'stepTime': 0.193282796010997, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 7, 'iterations': 9, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193282796010997, 'attempts': ' 1U', 
+    'timeIncrement': 7.81867997901985e-05, 'increment': 130, 
+    'stepTime': 0.193282796010997, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 15, 'iterations': 15, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 130, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193302342710945, 'attempts': 2, 
+    'timeIncrement': 1.95466999475496e-05, 'increment': 130, 
+    'stepTime': 0.193302342710945, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 131, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193331662760866, 'attempts': 1, 
+    'timeIncrement': 2.93200499213244e-05, 'increment': 131, 
+    'stepTime': 0.193331662760866, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 2, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193331662760866, 'attempts': ' 1U', 
+    'timeIncrement': 4.39800748819867e-05, 'increment': 132, 
+    'stepTime': 0.193331662760866, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 11, 'iterations': 11, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 132, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193342657779586, 'attempts': 2, 
+    'timeIncrement': 1.09950187204967e-05, 'increment': 132, 
+    'stepTime': 0.193342657779586, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 133, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193359150307667, 'attempts': 1, 
+    'timeIncrement': 1.6492528080745e-05, 'increment': 133, 
+    'stepTime': 0.193359150307667, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 1, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 134, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193383889099788, 'attempts': 1, 
+    'timeIncrement': 2.47387921211175e-05, 'increment': 134, 
+    'stepTime': 0.193383889099788, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 7, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 135, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.19342099728797, 'attempts': 1, 
+    'timeIncrement': 3.71081881816762e-05, 'increment': 135, 
+    'stepTime': 0.19342099728797, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 5, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 136, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193476659570242, 'attempts': 1, 
+    'timeIncrement': 5.56622822725144e-05, 'increment': 136, 
+    'stepTime': 0.193476659570242, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 137, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193560152993651, 'attempts': 1, 
+    'timeIncrement': 8.34934234087715e-05, 'increment': 137, 
+    'stepTime': 0.193560152993651, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 138, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193685393128764, 'attempts': 1, 
+    'timeIncrement': 0.000125240135113157, 'increment': 138, 
+    'stepTime': 0.193685393128764, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 139, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.193873253331434, 'attempts': 1, 
+    'timeIncrement': 0.000187860202669736, 'increment': 139, 
+    'stepTime': 0.193873253331434, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 140, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.194155043635439, 'attempts': 1, 
+    'timeIncrement': 0.000281790304004604, 'increment': 140, 
+    'stepTime': 0.194155043635439, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 141, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.194577729091446, 'attempts': 1, 
+    'timeIncrement': 0.000422685456006906, 'increment': 141, 
+    'stepTime': 0.194577729091446, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 142, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.195211757275456, 'attempts': 1, 
+    'timeIncrement': 0.000634028184010359, 'increment': 142, 
+    'stepTime': 0.195211757275456, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 143, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.196162799551472, 'attempts': 1, 
+    'timeIncrement': 0.000951042276015538, 'increment': 143, 
+    'stepTime': 0.196162799551472, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 144, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.197589362965495, 'attempts': 1, 
+    'timeIncrement': 0.00142656341402331, 'increment': 144, 
+    'stepTime': 0.197589362965495, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 145, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.19972920808653, 'attempts': 1, 
+    'timeIncrement': 0.00213984512103496, 'increment': 145, 
+    'stepTime': 0.19972920808653, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 146, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.202938975768082, 'attempts': 1, 
+    'timeIncrement': 0.00320976768155244, 'increment': 146, 
+    'stepTime': 0.202938975768082, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 147, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.207753627290411, 'attempts': 1, 
+    'timeIncrement': 0.00481465152232866, 'increment': 147, 
+    'stepTime': 0.207753627290411, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 148, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.214975604573904, 'attempts': 1, 
+    'timeIncrement': 0.00722197728349299, 'increment': 148, 
+    'stepTime': 0.214975604573904, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 149, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.225808570499143, 'attempts': 1, 
+    'timeIncrement': 0.0108329659252395, 'increment': 149, 
+    'stepTime': 0.225808570499143, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 150, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.242058019387003, 'attempts': 1, 
+    'timeIncrement': 0.0162494488878592, 'increment': 150, 
+    'stepTime': 0.242058019387003, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 151, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.266432192718791, 'attempts': 1, 
+    'timeIncrement': 0.0243741733317889, 'increment': 151, 
+    'stepTime': 0.266432192718791, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 152, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.302993452716475, 'attempts': 1, 
+    'timeIncrement': 0.0365612599976833, 'increment': 152, 
+    'stepTime': 0.302993452716475, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 153, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.357835342713, 'attempts': 1, 
+    'timeIncrement': 0.0548418899965249, 'increment': 153, 
+    'stepTime': 0.357835342713, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 154, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.440098177707787, 'attempts': 1, 
+    'timeIncrement': 0.0822628349947874, 'increment': 154, 
+    'stepTime': 0.440098177707787, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 155, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.563492430199968, 'attempts': 1, 
+    'timeIncrement': 0.123394252492181, 'increment': 155, 
+    'stepTime': 0.563492430199968, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 156, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {
+    'totalTime': 0.74858380893824, 'attempts': 1, 
+    'timeIncrement': 0.185091378738272, 'increment': 156, 
+    'stepTime': 0.74858380893824, 'step': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 157, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(STATUS, {'totalTime': 1.0, 
+    'attempts': 1, 'timeIncrement': 0.25141619106176, 'increment': 157, 
+    'stepTime': 1.0, 'step': 1, 'jobName': 'Single-Lap-Cohesive-surface', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(END_STEP, {
+    'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(COMPLETED, {
+    'phase': STANDARD_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+mdb.jobs['Single-Lap-Cohesive-surface']._Message(JOB_COMPLETED, {
+    'time': 'Sat Mar 03 18:03:21 2018', 
+    'jobName': 'Single-Lap-Cohesive-surface'})
+# Save by yousefik on 2018_03_03-18.09.07; build 6.14-1 2014_06_04-23.11.02 134264
